@@ -3,14 +3,14 @@
 require 'pathname'
 
 @root = Pathname.new(File.dirname(__FILE__)).parent.parent.expand_path
-app_file = @root.join('lib/visage-app')
+app_file = @root.join('lib/visage-app').to_s
 
 require 'rubygems'
-require 'spec/expectations'
+require 'rspec/expectations'
 require 'rack/test'
 require 'webrat'
 
-ENV['CONFIG_PATH'] = @root.join('features/data/config/default')
+ENV['CONFIG_PATH'] = @root.join('features/data/config/default').to_s
 
 require app_file
 # Force the application name because polyglot breaks the auto-detection logic.
