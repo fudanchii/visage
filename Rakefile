@@ -7,7 +7,7 @@ begin
 
   Cucumber::Rake::Task.new do |t|
     t.binary = "bin/cucumber"
-    t.cucumber_opts = "--require features/ features/"
+    t.cucumber_opts = ""
   end
 rescue LoadError
 end
